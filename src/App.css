@@ -1,0 +1,237 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 6%;
+  background: #111;
+  border-bottom: 1px solid #c49a27;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffd700;
+}
+
+.logo span {
+  color: white;
+}
+
+.wallet {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: right;
+}
+
+.wallet small {
+  color: #aaa;
+}
+
+.wallet strong {
+  color: #ffd700;
+  font-size: 20px;
+}
+
+main {
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 15px;
+}
+
+.game {
+  background: #111;
+  border: 1px solid #c49a27;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 0 25px #c49a2430;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.heading span:first-child {
+  color: #20d66b;
+}
+
+.sky {
+  height: 390px;
+  background: radial-gradient(
+    ellipse at bottom,
+    #17304e,
+    #050b15 70%
+  );
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.multiplier {
+  font-size: clamp(60px, 12vw, 110px);
+  font-weight: 900;
+  color: #ffd700;
+  text-shadow: 0 0 25px #ffb700;
+  z-index: 2;
+}
+
+.plane {
+  position: absolute;
+  font-size: 60px;
+  right: 15%;
+  top: 55%;
+  z-index: 3;
+}
+
+.flying .plane {
+  animation: fly 4s linear infinite alternate;
+}
+
+@keyframes fly {
+  from {
+    transform: translate(0, 0) rotate(-15deg);
+  }
+  to {
+    transform: translate(-180px, -130px) rotate(-15deg);
+  }
+}
+
+.line {
+  position: absolute;
+  width: 75%;
+  height: 3px;
+  background: #ffd700;
+  box-shadow: 0 0 15px #ffd700;
+  transform: rotate(-18deg);
+  top: 70%;
+}
+
+.message {
+  position: absolute;
+  bottom: 12px;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.crashed .multiplier {
+  color: #ff3333;
+}
+
+.controls {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.controls label {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.controls input {
+  padding: 15px;
+  background: #080808;
+  border: 1px solid #b68b20;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.controls button {
+  padding: 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.play {
+  background: linear-gradient(135deg, #fff0a0, #d4a000);
+  color: black;
+}
+
+.cashout {
+  background: #12b75a;
+  color: white;
+}
+
+.cashout:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.history {
+  margin-top: 25px;
+  padding: 20px;
+  background: #111;
+  border: 1px solid #604b15;
+  border-radius: 15px;
+}
+
+.history h2 {
+  color: #ffd700;
+  font-size: 18px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  background: #202020;
+  padding: 13px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.history-item strong {
+  color: #20df73;
+}
+
+footer {
+  text-align: center;
+  color: #d4af37;
+  margin-top: 35px;
+  padding-bottom: 20px;
+}
+
+footer p {
+  color: #888;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .sky {
+    height: 320px;
+  }
+}
